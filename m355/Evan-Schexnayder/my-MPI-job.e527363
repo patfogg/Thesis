@@ -1,0 +1,18 @@
+########################### Execution Started #############################
+JobId:527363.tinmgr2
+UserName:s4394640
+GroupName:qris-uq
+ExecutionHost:tn211b
+###############################################################################
+########################### Job Execution History #############################
+JobId:527363.tinmgr2
+UserName:s4394640
+GroupName:qris-uq
+JobName:my-MPI-job
+SessionId:45522
+ResourcesRequested:mem=10gb,ncpus=24,place=free,walltime=24:00:00
+ResourcesUsed:cpupercent=142,cput=00:00:10,mem=0kb,ncpus=24,vmem=0kb,walltime=00:00:07
+QueueUsed:Short
+AccountString:UQ-EAIT-MechMining
+ExitStatus:1
+###############################################################################

@@ -1,0 +1,13 @@
+#!/bin/bash
+#PBS -S /bin/bash
+#PBS -N my-MPI-job
+#PBS -A UQ-EAIT-MechMining
+#PBS -l select=1:ncpus=24:mpiprocs=24:mem=10g
+#PBS -l walltime=24:00:00
+
+module purge
+module load gnu
+module load openmpi2_ib/2.1.6
+
+cd $PBS_O_WORKDIR
+mpirun e4mpi --job=lehr --report-residuals --run > LOGFILE 2>ERRFILE

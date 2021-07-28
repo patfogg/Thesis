@@ -1,0 +1,66 @@
+# Plot the species as they develop towards the body along slice normal to nose.
+
+R = -7.5e-3
+
+set term postscript eps enhanced 20
+set output 'O2_production_RS_m355.eps'
+set style line 1 linewidth 3.0
+set style line 16 pointsize 2.0
+set title 'O2 mass fraction along slice normal to nose'
+set key top left
+set xlabel 'Distance (m)'
+set ylabel 'Mass fraction'
+set xrange [7*R/6:R]
+set yrange [0.0:1.0]
+plot 'profile.data' skip 13401 using 1:17 title 'Roger-Schexnayder' with lines linestyle 1
+
+
+set term postscript eps enhanced 20
+set output 'N2_production_RS_m355.eps'
+set style line 1 linewidth 3.0
+set style line 16 pointsize 2.0
+set title 'N2 mass fraction along slice normal to nose'
+set key top left
+set xlabel 'Distance (m)'
+set ylabel 'Mass fraction'
+set xrange [7*R/6:R]
+set yrange [0.0:1.0]
+plot 'profile.data' skip 13401 using 1:19 title 'Roger-Schexnayder' with lines linestyle 1
+
+
+set term postscript eps enhanced 20
+set output 'H2_production_RS_m355.eps'
+set style line 1 linewidth 3.0
+set style line 16 pointsize 2.0
+set title 'H2 mass fraction along slice normal to nose'
+set key top left
+set xlabel 'Distance (m)'
+set ylabel 'Mass fraction'
+set xrange [7*R/6:R]
+set yrange [0.0:10.0e-01]
+plot 'profile.data' skip 13401 using 1:21 title 'Roger-Schexnayder' with lines linestyle 1
+
+
+# Plot residuals 
+
+set term postscript eps enhanced 20
+set output 'energy-residuals.eps'
+set style line 1 linewidth 3.0
+set title 'Energy Residual Post'
+set key top left
+set xlabel 'Step'
+set ylabel 'Energy'
+set xrange [0.0:133948]
+set yrange [0.0:2.542573e+13]
+plot 'lehr-residuals.txt' using 1:8 title 'energy' with lines linestyle 1
+
+set term postscript eps enhanced 20
+set output 'mass-balance-residuals.eps'
+set style line 1 linewidth 3.0
+set title 'Mass Balance Residual Post'
+set key top left
+set xlabel 'Step'
+set ylabel 'Mass-Balance'
+set xrange [0.0:133948]
+set yrange [5.866005e-02:-4.147457e-03]
+plot 'lehr-residuals.txt' using 1:10 title 'Mass-Balance' with lines linestyle 1

@@ -1,0 +1,47 @@
+R = -7.5e-03
+
+set term postscript eps enhanced 20
+set output 'H2_production.eps'
+set style line 1 linewidth 3.0
+set style line 16 pointsize 2.0
+set title 'H2 mass fraction along slice normal to nose'
+set key top left
+set xlabel 'Distance (m)'
+set ylabel 'Mass fraction'
+set xrange [7*R/6:R]
+set yrange [0.0:2.0e-01]
+plot 'profile-ES.data' skip 13401 using 1:16 title 'Evens-Schexnayder' with lines linestyle 1,\
+	'profile-RS.data' skip 13401 using 1:21 title 'Roger-Schexnayder' with lines linestyle 2,\
+	'profile-S.data' skip 13401 using 1:16 title 'Stanford-2011' with lines linestyle 3,\
+	'profile-P.data' skip 6801 using 1:19 title 'Princeton-2012' with lines linestyle 4
+
+set term postscript eps enhanced 20
+set output 'O2_production.eps'
+set style line 1 linewidth 3.0
+set style line 16 pointsize 2.0
+set title 'O2 mass fraction along slice normal to nose'
+set key top left
+set xlabel 'Distance (m)'
+set ylabel 'Mass fraction'
+set xrange [7*R/6:R]
+set yrange [0.0:1.0e-00]
+plot 'profile-ES.data' skip 13401 using 1:17 title 'Evens-Schexnayder' with lines linestyle 1,\
+    'profile-RS.data' skip 13401 using 1:17 title 'Roger-Schexnayder' with lines linestyle 2,\
+    'profile-S.data' skip 13401 using 1:17 title 'Stanford-2011' with lines linestyle 3,\
+    'profile-P.data' skip 6801 using 1:18 title 'Princeton-2012' with lines linestyle 4
+
+set term postscript eps enhanced 20
+set output 'N2_production.eps'
+set style line 1 linewidth 3.0
+set style line 16 pointsize 2.0
+set title 'N2 mass fraction along slice normal to nose'
+set key top left
+set xlabel 'Distance (m)'
+set ylabel 'Mass fraction'
+set xrange [7*R/6:R]
+set yrange [0.0:1.0e-00]
+plot 'profile-ES.data' skip 13401 using 1:23 title 'Evens-Schexnayder' with lines linestyle 1,\
+    'profile-RS.data' skip 13401 using 1:19 title 'Roger-Schexnayder' with lines linestyle 2,\
+    'profile-S.data' skip 13401 using 1:24 title 'Stanford-2011' with lines linestyle 3,\
+    'profile-P.data' skip 6801 using 1:24 title 'Princeton-2012' with lines linestyle 4
+
